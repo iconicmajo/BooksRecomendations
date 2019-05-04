@@ -1,0 +1,104 @@
+//A continuacion podras ver como fue la logica de la relacion entre cada nodo,
+// para poder hacer esto se leyo la reseña de varios libros y se tomo en cuenta
+// a las edades que se mencionada se dirigidas y los temas centrales 
+//Estos nodos aun no fueron incluidos directamente en esta entrega
+//Pero se puede ver como se reflejaran más adelante y aqui ya esta el diseño de
+//la categoria juvenil
+
+********************JUVENILES*******************************
+match (a),(b) where id(a)=1 and id(b)=44 create (a)-[r:Similar]->(b) return type (r)
+match (a),(b) where id(a)=1 and id(b)=43 create (a)-[r:Similar]->(b) return type (r)
+match (a),(b) where id(a)=4 and id(b)=44 create (a)-[r:Similar]->(b) return type (r)
+match (a),(b) where id(a)=44 and id(b)=4 create (a)-[r:Similar]->(b) return type (r)
+match (a),(b) where id(a)=4 and id(b)=2 create (a)-[r:Similar]->(b) return type (r)
+match (a),(b) where id(a)=2 and id(b)=4 create (a)-[r:Similar]->(b) return type (r)
+match (a),(b) where id(a)=2 and id(b)=44 create (a)-[r:Similar]->(b) return type (r)
+match (a),(b) where id(a)=41 and id(b)=60 create (a)-[r:Similar]->(b) return type (r)
+match (a),(b) where id(a)=60 and id(b)=41 create (a)-[r:Similar]->(b) return type (r)
+match (a),(b) where id(a)=41 and id(b)=61 create (a)-[r:Similar]->(b) return type (r)
+match (a),(b) where id(a)=41 and id(b)=80 create (a)-[r:Similar]->(b) return type (r)
+match (a),(b) where id(a)=61 and id(b)=80 create (a)-[r:Similar]->(b) return type (r)
+match (a),(b) where id(a)=60 and id(b)=61 create (a)-[r:Similar]->(b) return type (r)
+match (a),(b) where id(a)=80 and id(b)=61 create (a)-[r:Similar]->(b) return type (r)
+match (a),(b) where id(a)=1 and id(b)=43 create (a)-[r:Similar]->(b) return type (r)
+
+//ESTA A PESAR QUE SON DEL MISMO GENERO ENTRE ELLAS EXISTE RELACION, NO TODAS DIRIGENT A TODAS
+//LA SELECCION FUE HECHA EN BASE AL TEMA CENTRAL
+
+********************** NOVELA Y NOVELA NEGRA************************************
+match (a),(b) where id(a)=5 and id(b)=7 create (a)-[r:Similar]->(b) return type (r)
+match (a),(b) where id(a)=7 and id(b)=16 create (a)-[r:Similar]->(b) return type (r)
+match (a),(b) where id(a)=16 and id(b)=5 create (a)-[r:Similar]->(b) return type (r)
+match (a),(b) where id(a)=5 and id(b)=46 create (a)-[r:Similar]->(b) return type (r)
+match (a),(b) where id(a)=7 and id(b)=46 create (a)-[r:Similar]->(b) return type (r)
+match (a),(b) where id(a)=60 and id(b)=17 create (a)-[r:Similar]->(b) return type (r)
+match (a),(b) where id(a)=6 and id(b)=7 create (a)-[r:Similar]->(b) return type (r)
+match (a),(b) where id(a)=6 and id(b)=9 create (a)-[r:Similar]->(b) return type (r)
+
+********************************NARRATIVA Y POESIA*******************************
+match (a),(b) where id(a)=13 and id(b)=18 create (a)-[r:Similar]->(b) return type (r
+match (a),(b) where id(a)=18 and id(b)=10 create (a)-[r:Similar]->(b) return type (r)
+match (a),(b) where id(a)=13 and id(b)=15 create (a)-[r:Similar]->(b) return type (r)
+match (a),(b) where id(a)=15 and id(b)=10 create (a)-[r:Similar]->(b) return type (r)
+
+//Se eliminaron los libroa anteriormente relacionados con la categoria juvenil o bueno 
+//solo aglunos y se busco el enofque de mundos alternos que es lo que destaca en 
+//este genero, aqui hay algunas sagas y otras incompletas
+
+********************************CIENCIA FICCION************************************
+match (a),(b) where id(a)=2 and id(b)=41 create (a)-[r:Similar]->(b) return type (r)
+match (a),(b) where id(a)=2 and id(b)=44 create (a)-[r:Similar]->(b) return type (r)
+match (a),(b) where id(a)=44 and id(b)=42 create (a)-[r:Similar]->(b) return type (r)
+match (a),(b) where id(a)=47 and id(b)=2 create (a)-[r:Similar]->(b) return type (r)
+match (a),(b) where id(a)=61 and id(b)=80 create (a)-[r:Similar]->(b) return type (r)
+match (a),(b) where id(a)=2 and id(b)=42 create (a)-[r:Similar]->(b) return type (r)
+
+//Aqui unicamnte unimos cada libro con su genero correspondiente según lo investigado 
+//de cada uno, con el fin de conseguir orden en el grafo
+
+********************************PERTENENCIAS A GENEROS***************************
+************Ciencia Ficcion
+match (a),(b) where id(a)=104 and id(b)=2 create (a)-[r:Genero]->(b) return type (r)
+match (a),(b) where id(a)=104 and id(b)=3 create (a)-[r:Genero]->(b) return type (r)
+match (a),(b) where id(a)=104 and id(b)=41 create (a)-[r:Genero]->(b) return type (r)
+match (a),(b) where id(a)=104 and id(b)=42 create (a)-[r:Genero]->(b) return type (r)
+match (a),(b) where id(a)=104 and id(b)=44 create (a)-[r:Genero]->(b) return type (r)
+match (a),(b) where id(a)=104 and id(b)=47 create (a)-[r:Genero]->(b) return type (r)
+match (a),(b) where id(a)=104 and id(b)=61 create (a)-[r:Genero]->(b) return type (r)
+match (a),(b) where id(a)=104 and id(b)=80 create (a)-[r:Genero]->(b) return type (r)
+
+************Novela 
+match (a),(b) where id(a)=82 and id(b)=43 create (a)-[r:Genero]->(b) return type (r)
+match (a),(b) where id(a)=82 and id(b)=60 create (a)-[r:Genero]->(b) return type (r)
+
+*************novela negra
+match (a),(b) where id(a)=83 and id(b)=5 create (a)-[r:Genero]->(b) return type (r)
+match (a),(b) where id(a)=83 and id(b)=7 create (a)-[r:Genero]->(b) return type (r)
+match (a),(b) where id(a)=83 and id(b)=16 create (a)-[r:Genero]->(b) return type (r)
+match (a),(b) where id(a)=83 and id(b)=17 create (a)-[r:Genero]->(b) return type (r)
+match (a),(b) where id(a)=83 and id(b)=46 create (a)-[r:Genero]->(b) return type (r)
+
+****************Periodistico
+match (a),(b) where id(a)=124 and id(b)=3 create (a)-[r:Genero]->(b) return type (r)
+match (a),(b) where id(a)=124 and id(b)=40 create (a)-[r:Genero]->(b) return type (r)
+
+******************Prosa y posesia
+match (a),(b) where id(a)=63 and id(b)=10 create (a)-[r:Genero]->(b) return type (r)
+match (a),(b) where id(a)=63 and id(b)=12 create (a)-[r:Genero]->(b) return type (r)
+match (a),(b) where id(a)=63 and id(b)=15 create (a)-[r:Genero]->(b) return type (r)
+match (a),(b) where id(a)=63 and id(b)=11 create (a)-[r:Genero]->(b) return type (r)
+
+***********Terror
+match (a),(b) where id(a)=62 and id(b)=6 create (a)-[r:Genero]->(b) return type (r)
+match (a),(b) where id(a)=62 and id(b)=8 create (a)-[r:Genero]->(b) return type (r)
+
+//Se unieron estos tres por la pequeña cantidad, perocada uno es un nodo ceparado
+
+**************Dramatico, ensayo y narrativa
+match (a),(b) where id(a)=20 and id(b)=1 create (a)-[r:Genero]->(b) return type (r)
+match (a),(b) where id(a)=65 and id(b)=14 create (a)-[r:Genero]->(b) return type (r)
+match (a),(b) where id(a)=65 and id(b)=18 create (a)-[r:Genero]->(b) return type (r)
+match (a),(b) where id(a)=64 and id(b)=45 create (a)-[r:Genero]->(b) return type (r)
+match (a),(b) where id(a)=64 and id(b)=13 create (a)-[r:Genero]->(b) return type (r)
+match (a),(b) where id(a)=64 and id(b)=19 create (a)-[r:Genero]->(b) return type (r)
+match (a),(b) where id(a)=20 and id(b)=40 create (a)-[r:Genero]->(b) return type (r)
