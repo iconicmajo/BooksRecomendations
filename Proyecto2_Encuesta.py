@@ -38,3 +38,23 @@ jk_Rowllin = db.labels.create("J.K Rowllin")
 isaac_Asimov = db.labels.create("Isaac Asimov")
 francisco_Alamar = db.labels.create("Francisco Alamar")
 
+#Generos
+novela_Negra = db.labels.create("Novela Negra")
+dramatico = db.labels.create("Dramatico")
+terror = db.labels.create("Terror")
+prosa = db.labels.create("Prosa")
+ensayo = db.labels.create("Ensayo")
+narrativa = db.labels.create("Narrativa")
+novela = db.labels.create("Novela")
+ciencia_Ficcion = db.labels.create("Ciencia Ficcion")
+periodistico = db.labels.create("Periodistico")
+sagas = db.labels.create("Sagas")
+aventura = db.labels.create("Aventura")
+
+#Costos y numero de paginas
+costo_Bajo = db.labels.create("Bajo Costo")
+costo_Medio = db.labels.create("Costo Medio")
+costo_Alto = db.labels.create("Costo Alto")
+pags_0_a_250 = db.labels.create("De 0 a 250 paginas")
+pags_en_adelante = db.labels.create("De 251 paginas en adelante")
+usuario = db.labels.create("Usuario")
