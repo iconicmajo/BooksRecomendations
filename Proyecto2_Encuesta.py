@@ -58,3 +58,30 @@ costo_Alto = db.labels.create("Costo Alto")
 pags_0_a_250 = db.labels.create("De 0 a 250 paginas")
 pags_en_adelante = db.labels.create("De 251 paginas en adelante")
 usuario = db.labels.create("Usuario")
+
+##Titulos de libros
+bajo_la_misma_estrella = db.nodes.create(name="Bajo la Misma Estrella")
+sinsajo = db.nodes.create(name="Sinsajo")
+viaje_al_Corazon_del_Hambre = db.nodes.create(name="Viaje al Corazon del Hambre")
+los_Juegos_del_Hambre = db.nodes.create(name="Los Juegos del Hambre")
+el_Asesinato_de_Roger = db.nodes.create(name="El Asesinato de Roger Ackroyd")
+la_Leyenda_de_Sleepy = db.nodes.create(name="La Leyenda de Sleepy")
+un_Cadaver_en_la_Biblioteca = db.nodes.create(name="Un Cadaver en la Biblioteca")
+fuan_no_Tane_Plus = db.nodes.create(name="Fuan no Tane Plus")
+churras_y_Merinas = db.nodes.create(name="Churras y Merinas")
+blanco = db.nodes.create(name="Blanco")
+la_mente_Dibujada = db.nodes.create(name="La Mente Dibujada")
+dormir_a_la_belle = db.nodes.create(name="Dormir a la Belle")
+burla = db.nodes.create(name="Burla burlando.Las diversiones de los universitarios en el siglo XVI")
+cuando_el_oro_aprieta = db.nodes.create(name="Cuando el Oro Aprieta")
+animales_heridos = db.nodes.create(name="Animales Heridos")
+
+##Usuarios
+Javier_Salazar = db.nodes.create(name="Javier Salazar")
+Andre_Rodriguez = db.nodes.create(name ="André Rodriguez")
+Maria_Jose_Lemus = db.nodes.create(name ="María José Lemus")
+usuario.add(Javier_Salazar, Andre_Rodriguez, Maria_Jose_Lemus)
+
+#Print para corroborar que todo funciona 
+print("Si conecto a la base de datos")
+
