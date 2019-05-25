@@ -12,7 +12,6 @@ from neo4jrestclient import client
 db = GraphDatabase("http://localhost:7474", username="neo4j", password="1234")
 
 #Aqui se ingresan los nodos y las etiquetas del grafo
-
 ##Categorias de la base de datos
 Autores = db.labels.create("Autores")
 Costos = db.labels.create("Costos")
@@ -20,8 +19,18 @@ Generos = db.labels.create("Generos")
 No_Pags = db.labels.create("Numero de paginas")
 Titulos = db.labels.create("Titulos")
 Usuarios = db.labels.create("Usuarios")
+Encuesta_Pregunta = db.labels.create("Preguntas")
+Edades = db.labels.create("Edades")
+Genero = db.labels.create("Generos")
+Nivel_Educativo = db.labels.create("Nivel Educativo")
+genders_Result = db.labels.create("Resultados")
+genero_Literario_Universal = db.labels.create("Literatura Universal")
+
+#Nodo Universal
+nodo_Universal = db.nodes.create(name="Literatura Universal")
 
 #Autores
+#Manualmente se crean los nodos de los autores de los libros
 jonh_Green = db.nodes.create(name="Jonh Green")
 suzann_Collings = db.nodes.create(name="Suzann Collings")
 xavier_Aldekoa = db.nodes.create(name="Xavier Aldekoa")
@@ -45,9 +54,11 @@ jk_Rowllin = db.nodes.create(name="J.K Rowllin")
 isaac_Asimov = db.nodes.create(name="Isaac Asimov")
 francisco_Alamar = db.nodes.create(name="Francisco Alamar")
 
+#Los nodos se agregan a la base de datos
 Autores.add(jonh_Green, suzann_Collings, xavier_Aldekoa, agatha_Christie, suzanne_Collins, washington_Irving, desconocido, masaaki_Nakayama, roman_Alvarez, carlota_Josefina_Berard, grace_Klimt_y_Salvawitts, aitana_Monzon, alberto_Del_Campo_Tejedor, bjorn_Blanca_Van_Goch, luis_Alemañ, salva_Alemany, juan_Jose_Fernandez_Morales, luis_Amezaga, julio_Fraile, jk_Rowllin, isaac_Asimov, francisco_Alamar)
 
 #Generos
+#Manualmente se crean los nodos de los generos de los libros
 novela_Negra = db.nodes.create(name="Novela Negra")
 dramatico = db.nodes.create(name="Dramatico")
 terror = db.nodes.create(name="Terror")
@@ -61,16 +72,20 @@ sagas = db.nodes.create(name="Sagas")
 aventura = db.nodes.create(name="Aventura")
 poesia = db.nodes.create(name="Poesia")
 
+#Los generos se agregan a la base de datos
 Generos.add(novela_Negra, dramatico, terror, prosa, ensayo, narrativa, novela, ciencia_Ficcion, periodistico, sagas, aventura, poesia)
 
 #Costos y numero de paginas
+#Manualmente se crean los nodos de los tipos de costos y numero de paginas
 costo_Bajo = db.nodes.create(name="Bajo Costo")
 costo_Medio = db.nodes.create(name="Costo Medio")
 costo_Alto = db.nodes.create(name="Costo Alto")
 pags_0_a_250 = db.nodes.create(name="De 0 a 250 paginas")
 pags_en_adelante = db.nodes.create(name="De 251 paginas en adelante")
 
-Costos.add(costo_Bajo, costo_Medio, costo_Alto, pags_0_a_250, pags_en_adelante)
+#Se agregan los nodos a la base de datos
+Costos.add(costo_Bajo, costo_Medio, costo_Alto)
+No_Pags.add(pags_0_a_250, pags_en_adelante)
 
 ##Titulos de libros
 bajo_la_misma_estrella = db.nodes.create(name="Bajo la Misma Estrella")
@@ -149,7 +164,7 @@ el_Asesinato_de_Roger.relationships.create("Pertenece a: ", novela_Negra)
 la_Leyenda_de_Sleepy.relationships.create("Pertenece a: ", terror)
 un_Cadaver_en_la_Biblioteca.relationships.create("Pertenece a: ", novela_Negra)
 fuan_no_Tane_Plus.relationships.create("Pertenece a: ", terror)
-churras_y_Merinas.relationships.create("Pertenece a: ", periodistico)
+churras_y_Merinas.relationships.create("Pertenece a: ", periodistico) 
 blanco.relationships.create("Pertenece a: ", poesia )
 la_mente_Dibujada.relationships.create("Pertenece a: ", poesia)
 dormir_a_la_belle.relationships.create("Pertenece a: ", poesia)
@@ -166,6 +181,71 @@ buscando_a_Alaska.relationships.create("Pertenece a: ", novela)
 en_Llamas.relationships.create("Pertenece a: ", ciencia_Ficcion)
 la_Sociedad_Inmortal.relationships.create("Pertenece a: ", ensayo)
 
+#Relaciones de libros con costos 
+bajo_la_misma_estrella.relationships.create("El precio del libro es: ", costo_Mayor)
+sinsajo.relationships.create("Pertenece a: ", costo_Mayor)
+viaje_al_Corazon_del_Hambre.relationships.create("El precio del libro es: ", costo_Medio)
+los_Juegos_del_Hambre.relationships.create("El precio del libro es: ", costo_Mayor)
+el_Asesinato_de_Roger.relationships.create("El precio del libro es: ", costo_Mayor)
+la_Leyenda_de_Sleepy.relationships.create("El precio del libro es: ", costo_Medio)
+un_Cadaver_en_la_Biblioteca.relationships.create("El precio del libro es: ", )
+fuan_no_Tane_Plus.relationships.create("El precio del libro es: ", costo_Bajo)
+churras_y_Merinas.relationships.create("El precio del libro es: ", costo_Medio) 
+blanco.relationships.create("El precio del libro es: ", costo_Bajo)
+la_mente_Dibujada.relationships.create("El precio del libro es: ", costo_Bajo)
+dormir_a_la_belle.relationships.create("El precio del libro es: ", costo_Medio)
+burla.relationships.create("El precio del libro es: ", costo_Bajo)
+cuando_el_oro_aprieta.relationships.create("El precio del libro es: ", costo_Bajo)
+animales_Heridos.relationships.create("El precio del libro es: ", costo_Medio)
+eire.relationships.create("El precio del libro es: ", costo_Bajo)
+al_Tantear_la_Costa.relationships.create("El precio del libro es: ", costo_Medio)
+vuelos_Rasantes.relationships.create("El precio del libro es: ", costo_Bajo)
+objective_AHIAH.relationships.create("El precio del libro es: ", costo_Mayor)
+harry_Potter_y_la_Piedra.relationships.create("El precio del libro es: ", costo_Mayor)
+yo_Robot.relationships.create("El precio del libro es: ", costo_Mayor)
+buscando_a_Alaska.relationships.create("El precio del libro es: ", )
+en_Llamas.relationships.create("El precio del libro es: ", costo_Bajo)
+la_Sociedad_Inmortal.relationships.create("El precio del libro es: ", costo_Medio)
+
+#Relaciones de libros con numero de paginas
+bajo_la_misma_estrella.relationships.create("La cantidad de paginas es: ", pags_en_adelante)
+sinsajo.relationships.create("La cantidad de paginas es: ", pags_0_a_250)
+viaje_al_Corazon_del_Hambre.relationships.create("La cantidad de paginas es: ", pags_0_a_250)
+los_Juegos_del_Hambre.relationships.create("La cantidad de paginas es: ", pags_en_adelante)
+el_Asesinato_de_Roger.relationships.create("La cantidad de paginas es: ", pags_0_a_250)
+la_Leyenda_de_Sleepy.relationships.create("La cantidad de paginas es: ", pags_en_adelante)
+un_Cadaver_en_la_Biblioteca.relationships.create("La cantidad de paginas es: ", )
+fuan_no_Tane_Plus.relationships.create("La cantidad de paginas es: ", pags_0_a_250)
+churras_y_Merinas.relationships.create("La cantidad de paginas es: ", pags_en_adelante) 
+blanco.relationships.create("La cantidad de paginas es: ",pags_0_a_250)
+la_mente_Dibujada.relationships.create("La cantidad de paginas es: ", pags_0_a_250)
+dormir_a_la_belle.relationships.create("La cantidad de paginas es: ", pags_en_adelante)
+burla.relationships.create("La cantidad de paginas es: ", pags_0_a_250)
+cuando_el_oro_aprieta.relationships.create("La cantidad de paginas es: ", pags_0_a_250)
+animales_Heridos.relationships.create("La cantidad de paginas es: ", pags_en_adelante)
+eire.relationships.create("La cantidad de paginas es: ", pags_0_a_250)
+al_Tantear_la_Costa.relationships.create("La cantidad de paginas es: ", pags_0_a_250)
+vuelos_Rasantes.relationships.create("La cantidad de paginas es: ", pags_0_a_250)
+objective_AHIAH.relationships.create("La cantidad de paginas es: ", pags_en_adelante)
+harry_Potter_y_la_Piedra.relationships.create("La cantidad de paginas es: ", pags_0_a_250)
+yo_Robot.relationships.create("La cantidad de paginas es: ", pags_en_adelante)
+buscando_a_Alaska.relationships.create("La cantidad de paginas es: ", pags_0_a_250)
+en_Llamas.relationships.create("La cantidad de paginas es: ", pags_0_a_250)
+la_Sociedad_Inmortal.relationships.create("La cantidad de paginas es: ", pags_en_adelante)
+
+#Relaciones de los generos con el genero libro literario universal
+novela_Negra.relationships.create("Es perteneciente a la ", nodo_Universal)
+dramatico.relationships.create("Es perteneciente a la ", nodo_Universal)
+terror.relationships.create("Es perteneciente a la ", nodo_Universal)
+prosa.relationships.create("Es perteneciente a la ", nodo_Universal)
+ensayo.relationships.create("Es perteneciente a la ", nodo_Universal)
+narrativa.relationships.create("Es perteneciente a la ", nodo_Universal)
+novela.relationships.create("Es perteneciente a la ", nodo_Universal)
+ciencia_Ficcion.relationships.create("Es perteneciente a la ", nodo_Universal)
+periodistico.relationships.create("Es perteneciente a la ", nodo_Universal)
+sagas.relationships.create("Es perteneciente a la ", nodo_Universal)
+aventura.relationships.create("Es perteneciente a la ", nodo_Universal)
+poesia.relationships.create("Es perteneciente a la ", nodo_Universal)
+
 #Print para corroborar que todo funciona 
 print("Si conecto a la base de datos")
-

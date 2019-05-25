@@ -2,12 +2,23 @@ from neo4jrestclient.client import GraphDatabase
 from neo4jrestclient import client
 from numpy import *
 
+#Autores:María José Lemus, André Rodriguez, Javier Salazar 18764
+#Proyecto 2 Estructuras de Datos
+#Fecha: 24/05/2019
+#Descripción: Sistema de recomendaciones de libros, ya sea por autor, numero de paginas, costo del libro, genero del libro
 
-# Conexión a la base de datos, usando el puerto, el usuario y la contraseña de la base de datos
-# db = GraphDatabase("http://localhost:7474", username="neo4j", password="1234")
+#Se importa el grafo desde neo4j
+#Nota: Se necesita instalar neo4jrestclient para que se conecte a la base de datos
+from neo4jrestclient.client import GraphDatabase
+from neo4jrestclient import client
+
+#Conexión a la base de datos, usando el puerto, el usuario y la contraseña de la base de datos
+db = GraphDatabase("http://localhost:7474", username="neo4j", password="1234")
 
 generos = ["Novela Negra", "Dramatico", "Terror", "Prosa", "Ensayo", "Narrativa", "Novela",
            "Ciencia Ficcion", "Periodistico", "Sagas", "Aventura", "Poesia"]
+
+#Funcion para las preguntas
 def Preguntar(pregunta, respuestas):
     bandera = True
     respuesta = ""
@@ -22,7 +33,7 @@ def Preguntar(pregunta, respuestas):
             if i in generos:
                 generos.remove(i)
 
-
+#Funcion del main
 def main():
     mal = "Ingrese un valor correcto"
     print(
@@ -37,24 +48,34 @@ def main():
     # -----------------------Se pide información al usuario------------------------------#
     while (nombre.strip() == ""):
         nombre = input("¿Cuál es tu nombre? ").strip()
+        user = db.nodes.create(name=nombre)
+        Usuarios.add(user)
         if (nombre == ""):
             print(mal)
     while (banderaedad):
         try:
             edad = int(input("¿Qué edad tiene actualmente? "))
+            age = db.nodes.create(name=edad)
+            Edades.add(age)
             banderaedad = False
         except:
             print(mal)
     while (genero.strip() == ""):
         genero = input("¿Con qué genero se identifica? ").strip()
+        gender = db.nodes.create(name=genero)
+        Generos.add(gender)
         if (genero == ""):
             print(mal)
     bandera = True
     while bandera:
         niveleducativo = input("¿Cual es su nivel educativo?\na. Bachillerato\nb. Licenciatura\nc. "
                                "Posgrado\n").lower()
+        
         if niveleducativo == "":
             print(mal)
+        else:
+            educative = db.nodes.create(name=niveleducativo)
+            Nivel_Educativo.add(educative)
         if niveleducativo == "a":
             bandera = False
         elif niveleducativo == "b":
@@ -73,6 +94,11 @@ def main():
     for x in range(0, 8):
         Preguntar(preguntas[x], respuestas[x])
     print(generos)
+    result = db.nodes.create(name=generos)
+    genders_Result.add(result)
+    result.relationships.create("Los libros que le recomendamos son: ", user)
+    user.relationships.create("La edad del usuario es: ", age)
+    user.relationships.create("El grado academico del usuario es: ", educative)
     bandera=True
     respaginas = True
     while bandera:
@@ -93,4 +119,9 @@ def main():
         except:
             print(mal)
 
+    
 main()
+
+
+
+
