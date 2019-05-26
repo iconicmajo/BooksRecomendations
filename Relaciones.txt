@@ -1,0 +1,193 @@
+************************Libros************************************
+CREATE(n :Libros{Titulo:"El Asesinato de Roger Ackroyd", autor:"Agatha Christie", genero:"Novela Negra"}) Return n
+CREATE(n :Libros{Titulo:"La Leyenda de Sleepy Hollow", autor:"Washington Irving", genero:"Terror"}) Return n
+CREATE(n :Libros{Titulo:"Un Cadaver en la Biblioteca", autor:"", genero:"Novela Negra"}) Return n
+CREATE(n :Libros{Titulo:"Fuan no Tane Plus", autor:"Masaaki Nakayama", genero:"Terror"}) Return n
+CREATE(n :Libros{Titulo:"Churras y Merinas (Visiones, impresiones, realidades)", autor:"Roman Alvarez", genero:"Articulos Periodisticos"}) Return n
+CREATE(n :Libros{Titulo:"Blanco", autor:"Carlota Josefina Berard", genero:"Prosa poética"}) Return n
+CREATE(n :Libros{Titulo:"La Mente Dibujada", autor:"Grace Klimt y Salvawitts", genero:"Poesía y prosa poética"}) Return n
+CREATE(n :Libros{Titulo:"La Sociedad Inmortal (Hacia la Metamorfosis Humana)", autor:"Francisco Alamar", genero:"Ensayo Humanístico"}) Return n
+CREATE(n :Libros{Titulo:"Dormir á la belle étoile", autor:"Aitana Monzón", genero:"Poesía Actual"}) Return n
+CREATE(n :Libros{Titulo:"Burla burlando.Las diversiones de los universitarios en el siglo XVI", autor:"Alberto del Campo Tejedor", genero:"Ensayo historíco"}) Return n
+CREATE(n :Libros{Titulo:"Cuando el oro aprieta", autor:"Björn Blanca van Goch", genero:"Narrativa"}) Return n
+CREATE(n :Libros{Titulo:"Animales heridos", autor:"Luis Alemañ", genero:"Poesía"}) Return n
+CREATE(n :Libros{Titulo:"Éire", autor:"Salva Alemany", genero:"Novela Negra"}) Return n
+CREATE(n :Libros{Titulo:"Al tantear la costa", autor:"Juan José Fernández Morales", genero:"Novela Negra"}) Return n
+CREATE(n :Libros{Titulo:"Vuelos rasantes", autor:"Luis Amézaga", genero:"Narrativa"}) Return n
+CREATE(n :Libros{Titulo:"Objetive: AHIAH Summit - Objetivo: Cumbre AHIAH (Edición Bilingüe)", autor:"Julio Fraile", genero:"Economía"}) Return n
+CREATE(n :Libros{Titulo:"En el reino de la araña", autor:"M. Delbal", genero:"Novela Negra"}) Return n
+CREATE(n :Libros{Titulo:"Bestiarum Curriculum. Meditaciones sobre el acontecimiento (en la academia)", autor:"Belén Blesa Aledo", genero:"Ensayo Crítico sobre el método científico"}) Return n
+CREATE(n :Libros{Titulo:"Memorias de un homicida", autor:"José María Vaz de Soto", genero:"Novela"}) Return n
+CREATE(n :Libros{Titulo:"Bajo otra luz, la última", autor:"Vicente Rodríguez Manchado", genero:"Poesía actual"}) Return n
+CREATE(n :Libros{Titulo:"Viaje al centro de la tierra", autor:"Julio Verne", genero:"Ciencia Ficcion"}) Return n
+CREATE(n :Libros{Titulo:"La vuelta al mundo en 80 días", autor:"Julio Verne", genero:"Ciencia Ficcion"}) Return n
+CREATE(n :Libros{Titulo:"La isla misteriosa", autor:"Julio Verne", genero:"Ciencia Ficcion"}) Return n
+CREATE(n :Libros{Titulo:"La esfinge de los hielos", autor:"Julio Verne", genero:"Ciencia Ficcion"}) Return n
+CREATE(n :Libros{Titulo:"La casa de vapor", autor:"Julio Verne", genero:"Novela"}) Return n
+CREATE(n :Libros{Titulo:"En busca del tiempo perdido", autor:"Marcel Proust", genero:"Novela"}) Return n
+CREATE(n :Libros{Titulo:"Viaje al fin de la noche", autor:"Louis Fernandin Céline", genero:"Ciencia Ficcion"}) Return n
+CREATE(n :Libros{Titulo:"Diario de Anne Frank", autor:"Anne Frank", genero:"Novlea"}) Return n
+CREATE(n :Libros{Titulo:"Ulises", autor:"James Joyce", genero:"Ciencia Ficción"}) Return n
+CREATE(n :Libros{Titulo:"La metamorfosis", autor:"Kafka", genero:"Ciencia Ficcion"}) Return n
+CREATE(n :Libros{Titulo:"Cien años de soledad", autor:"Gabriel García Marquez", genero:"Novela","Ficcion"}) Return n
+CREATE(n :Libros{Titulo:"Lo que el viento se llevo", autor:"Margaret Mitchell", genero:"Novela"}) Return n
+CREATE(n :Libros{Titulo:"La montaña magica", autor:"Thomas Mann", genero:"Ciencia Ficcion"}) Return n
+CREATE(n :Libros{Titulo:"El silencio del mar", autor:"Jean Bruller", genero:"Dramatico"}) Return n
+CREATE(n :Libros{Titulo:"La vida instrucciones de uso", autor:"Georger Perec", genero:"Ciencia Ficcion"}) Return n
+CREATE(n :Libros{Titulo:"El sabuesodelos Baskerville", autor:"Arthur Conan Doyle", genero:"Novela Negra"}) Return n
+CREATE(n :Libros{Titulo:"Seis personajes en busca de autor", autor:"Lougi Pirandellor", genero:"Filosofia"}) Return n
+CREATE(n :Libros{Titulo:"Orgullo y Prejuicio", autor:"Jane Austen", genero:"Romance"}) Return n
+CREATE(n :Libros{Titulo:"La guerra de los mundos ", autor:"H. G. Wells", genero:"Ciencia Ficcion"}) Return n
+CREATE(n :Libros{Titulo:"El señor de los anillos", autor:"J. R. R. Tolkien", genero:"Ciencia Ficcion"}) Return n
+*******************************Juveniles nuevo ingreso***********************************
+CREATE(n :Libros{Titulo:"", autor:"", genero:""}) Return n
+CREATE(n :Libros{Titulo:"", autor:"", genero:""}) Return n
+
+***********************Relaciones Ciencia Ficcion
+match (a),(b) where id(a)=1 and id(b)=78 create (a)-[r:Pertenece]->(b) return type (r)
+match (a),(b) where id(a)=1 and id(b)=77 create (a)-[r:Pertenece]->(b) return type (r)
+match (a),(b) where id(a)=1 and id(b)=75 create (a)-[r:Pertenece]->(b) return type (r)
+match (a),(b) where id(a)=1 and id(b)=73 create (a)-[r:Pertenece]->(b) return type (r)
+match (a),(b) where id(a)=1 and id(b)=107 create (a)-[r:Pertenece]->(b) return type (r)
+match (a),(b) where id(a)=1 and id(b)=112 create (a)-[r:Pertenece]->(b) return type (r)
+match (a),(b) where id(a)=1 and id(b)=110 create (a)-[r:Pertenece]->(b) return type (r)
+match (a),(b) where id(a)=1 and id(b)=111 create (a)-[r:Pertenece]->(b) return type (r)
+match (a),(b) where id(a)=1 and id(b)=113 create (a)-[r:Pertenece]->(b) return type (r)
+match (a),(b) where id(a)=1 and id(b)=69 create (a)-[r:Pertenece]->(b) return type (r)
+match (a),(b) where id(a)=1 and id(b)=68 create (a)-[r:Pertenece]->(b) return type (r)
+
+*********************NOVELA
+match (a),(b) where id(a)=152 and id(b)=109 create (a)-[r:Pertenece]->(b) return type (r)
+match (a),(b) where id(a)=152 and id(b)=108 create (a)-[r:Pertenece]->(b) return type (r)
+match (a),(b) where id(a)=152 and id(b)=106 create (a)-[r:Pertenece]->(b) return type (r)
+match (a),(b) where id(a)=152 and id(b)=76 create (a)-[r:Pertenece]->(b) return type (r)
+match (a),(b) where id(a)=152 and id(b)=66 create (a)-[r:Pertenece]->(b) return type (r)
+match (a),(b) where id(a)=152 and id(b)=79 create (a)-[r:Pertenece]->(b) return type (r)
+
+*****************NOVELA NEGRA
+match (a),(b) where id(a)=2 and id(b)=72 create (a)-[r:Pertenece]->(b) return type (r)
+match (a),(b) where id(a)=2 and id(b)=67 create (a)-[r:Pertenece]->(b) return type (r)
+match (a),(b) where id(a)=2 and id(b)=57 create (a)-[r:Pertenece]->(b) return type (r)
+match (a),(b) where id(a)=2 and id(b)=51 create (a)-[r:Pertenece]->(b) return type (r)
+match (a),(b) where id(a)=2 and id(b)=50 create (a)-[r:Pertenece]->(b) return type (r)
+match (a),(b) where id(a)=2 and id(b)=33 create (a)-[r:Pertenece]->(b) return type (r)
+match (a),(b) where id(a)=2 and id(b)=54 create (a)-[r:Pertenece]->(b) return type (r)
+
+*************TERROR
+match (a),(b) where id(a)=150 and id(b)=56 create (a)-[r:Pertenece]->(b) return type (r)
+match (a),(b) where id(a)=150 and id(b)=58 create (a)-[r:Pertenece]->(b) return type (r)
+
+***********Posesia y prosa
+match (a),(b) where id(a)=114 and id(b)=61 create (a)-[r:Pertenece]->(b) return type (r)
+match (a),(b) where id(a)=149 and id(b)=61 create (a)-[r:Pertenece]->(b) return type (r)
+match (a),(b) where id(a)=114 and id(b)=60 create (a)-[r:Pertenece]->(b) return type (r)
+match (a),(b) where id(a)=149 and id(b)=60 create (a)-[r:Pertenece]->(b) return type (r)
+match (a),(b) where id(a)=149 and id(b)=49 create (a)-[r:Pertenece]->(b) return type (r)
+match (a),(b) where id(a)=114 and id(b)=63 create (a)-[r:Pertenece]->(b) return type (r)
+
+**************Narrativa
+match (a),(b) where id(a)=148 and id(b)=65 create (a)-[r:Pertenece]->(b) return type (r)
+match (a),(b) where id(a)=148 and id(b)=52 create (a)-[r:Pertenece]->(b) return type (r)
+
+***************Periodistico
+match (a),(b) where id(a)=153 and id(b)=64 create (a)-[r:Pertenece]->(b) return type (r)
+match (a),(b) where id(a)=153 and id(b)=62 create (a)-[r:Pertenece]->(b) return type (r)
+match (a),(b) where id(a)=153 and id(b)=59 create (a)-[r:Pertenece]->(b) return type (r)
+match (a),(b) where id(a)=153 and id(b)=53 create (a)-[r:Pertenece]->(b) return type (r)
+match (a),(b) where id(a)=153 and id(b)=55 create (a)-[r:Pertenece]->(b) return type (r)
+match (a),(b) where id(a)=153 and id(b)=71 create (a)-[r:Pertenece]->(b) return type (r)
+***********************Narrativo
+match (a),(b) where id(a)=151 and id(b)=74 create (a)-[r:Pertenece]->(b) return type (r)
+
+**************************PRECIOS Gratis
+match (a),(b) where id(a)=86 and id(b)=110 create (a)-[r:Pertenece]->(b) return type (r)
+match (a),(b) where id(a)=86 and id(b)=112 create (a)-[r:Pertenece]->(b) return type (r)
+match (a),(b) where id(a)=86 and id(b)=111 create (a)-[r:Pertenece]->(b) return type (r)
+match (a),(b) where id(a)=86 and id(b)=68 create (a)-[r:Pertenece]->(b) return type (r)
+match (a),(b) where id(a)=86 and id(b)=77 create (a)-[r:Pertenece]->(b) return type (r)
+match (a),(b) where id(a)=86 and id(b)=79 create (a)-[r:Pertenece]->(b) return type (r)
+match (a),(b) where id(a)=86 and id(b)=76 create (a)-[r:Pertenece]->(b) return type (r)
+match (a),(b) where id(a)=86 and id(b)=106 create (a)-[r:Pertenece]->(b) return type (r)
+match (a),(b) where id(a)=86 and id(b)=70 create (a)-[r:Pertenece]->(b) return type (r)
+
+**************************150
+match (a),(b) where id(a)=116 and id(b)=109 create (a)-[r:Pertenece]->(b) return type (r)
+match (a),(b) where id(a)=116 and id(b)=108 create (a)-[r:Pertenece]->(b) return type (r)
+match (a),(b) where id(a)=116 and id(b)=78 create (a)-[r:Pertenece]->(b) return type (r)
+match (a),(b) where id(a)=116 and id(b)=75 create (a)-[r:Pertenece]->(b) return type (r)
+match (a),(b) where id(a)=116 and id(b)=33 create (a)-[r:Pertenece]->(b) return type (r)
+match (a),(b) where id(a)=116 and id(b)=75 create (a)-[r:Pertenece]->(b) return type (r)
+
+******************300
+match (a),(b) where id(a)=117 and id(b)=113 create (a)-[r:Pertenece]->(b) return type (r)
+match (a),(b) where id(a)=117 and id(b)=73 create (a)-[r:Pertenece]->(b) return type (r)
+match (a),(b) where id(a)=117 and id(b)=107 create (a)-[r:Pertenece]->(b) return type (r)
+match (a),(b) where id(a)=117 and id(b)=69 create (a)-[r:Pertenece]->(b) return type (r)
+match (a),(b) where id(a)=117 and id(b)=52 create (a)-[r:Pertenece]->(b) return type (r)
+match (a),(b) where id(a)=117 and id(b)=65 create (a)-[r:Pertenece]->(b) return type (r)
+match (a),(b) where id(a)=117 and id(b)=56 create (a)-[r:Pertenece]->(b) return type (r)
+match (a),(b) where id(a)=117 and id(b)=58 create (a)-[r:Pertenece]->(b) return type (r)
+match (a),(b) where id(a)=117 and id(b)=54 create (a)-[r:Pertenece]->(b) return type (r)
+match (a),(b) where id(a)=117 and id(b)=50 create (a)-[r:Pertenece]->(b) return type (r)
+match (a),(b) where id(a)=117 and id(b)=57 create (a)-[r:Pertenece]->(b) return type (r)
+match (a),(b) where id(a)=117 and id(b)=67 create (a)-[r:Pertenece]->(b) return type (r)
+match (a),(b) where id(a)=117 and id(b)=72 create (a)-[r:Pertenece]->(b) return type (r)
+match (a),(b) where id(a)=117 and id(b)=51 create (a)-[r:Pertenece]->(b) return type (r)
+match (a),(b) where id(a)=117 and id(b)=53 create (a)-[r:Pertenece]->(b) return type (r)
+match (a),(b) where id(a)=117 and id(b)=62 create (a)-[r:Pertenece]->(b) return type (r)
+match (a),(b) where id(a)=117 and id(b)=71 create (a)-[r:Pertenece]->(b) return type (r)
+match (a),(b) where id(a)=117 and id(b)=59 create (a)-[r:Pertenece]->(b) return type (r)
+match (a),(b) where id(a)=117 and id(b)=64 create (a)-[r:Pertenece]->(b) return type (r)
+match (a),(b) where id(a)=117 and id(b)=55 create (a)-[r:Pertenece]->(b) return type (r)
+match (a),(b) where id(a)=117 and id(b)=63 create (a)-[r:Pertenece]->(b) return type (r)
+match (a),(b) where id(a)=117 and id(b)=61 create (a)-[r:Pertenece]->(b) return type (r)
+match (a),(b) where id(a)=117 and id(b)=60 create (a)-[r:Pertenece]->(b) return type (r)
+match (a),(b) where id(a)=117 and id(b)=49 create (a)-[r:Pertenece]->(b) return type (r)
+match (a),(b) where id(a)=117 and id(b)=74 create (a)-[r:Pertenece]->(b) return type (r)
+match (a),(b) where id(a)=117 and id(b)=66 create (a)-[r:Pertenece]->(b) return type (r)
+
+*******************Contiene (250-500)
+match (a),(b) where id(a)=84 and id(b)=70 create (a)-[r:Tiene]->(b) return type (r)
+match (a),(b) where id(a)=84 and id(b)=106 create (a)-[r:Tiene]->(b) return type (r)
+match (a),(b) where id(a)=84 and id(b)=76 create (a)-[r:Tiene]->(b) return type (r)
+match (a),(b) where id(a)=84 and id(b)=79 create (a)-[r:Tiene]->(b) return type (r)
+match (a),(b) where id(a)=84 and id(b)=109 create (a)-[r:Tiene]->(b) return type (r)
+match (a),(b) where id(a)=84 and id(b)=78 create (a)-[r:Tiene]->(b) return type (r)
+match (a),(b) where id(a)=84 and id(b)=51 create (a)-[r:Tiene]->(b) return type (r)
+match (a),(b) where id(a)=84 and id(b)=57 create (a)-[r:Tiene]->(b) return type (r)
+match (a),(b) where id(a)=84 and id(b)=72 create (a)-[r:Tiene]->(b) return type (r)
+match (a),(b) where id(a)=84 and id(b)=67 create (a)-[r:Tiene]->(b) return type (r)
+
+**************contiene (500+)
+match (a),(b) where id(a)=85 and id(b)=68 create (a)-[r:Tiene]->(b) return type (r)
+match (a),(b) where id(a)=85 and id(b)=112 create (a)-[r:Tiene]->(b) return type (r)
+match (a),(b) where id(a)=85 and id(b)=111 create (a)-[r:Tiene]->(b) return type (r)
+match (a),(b) where id(a)=85 and id(b)=75 create (a)-[r:Tiene]->(b) return type (r)
+match (a),(b) where id(a)=85 and id(b)=33 create (a)-[r:Tiene]->(b) return type (r)
+match (a),(b) where id(a)=85 and id(b)=108 create (a)-[r:Tiene]->(b) return type (r)
+match (a),(b) where id(a)=85 and id(b)=113 create (a)-[r:Tiene]->(b) return type (r)
+match (a),(b) where id(a)=85 and id(b)=69 create (a)-[r:Tiene]->(b) return type (r)
+match (a),(b) where id(a)=85 and id(b)=73 create (a)-[r:Tiene]->(b) return type (r)
+match (a),(b) where id(a)=85 and id(b)=56 create (a)-[r:Tiene]->(b) return type (r)
+match (a),(b) where id(a)=85 and id(b)=71 create (a)-[r:Tiene]->(b) return type (r)
+match (a),(b) where id(a)=85 and id(b)=60 create (a)-[r:Tiene]->(b) return type (r)
+match (a),(b) where id(a)=85 and id(b)=63 create (a)-[r:Tiene]->(b) return type (r)
+match (a),(b) where id(a)=85 and id(b)=66 create (a)-[r:Tiene]->(b) return type (r)
+
+************MENOS DE 250
+match (a),(b) where id(a)=156 and id(b)=110 create (a)-[r:Tiene]->(b) return type (r)
+match (a),(b) where id(a)=156 and id(b)=77 create (a)-[r:Tiene]->(b) return type (r)
+match (a),(b) where id(a)=156 and id(b)=54 create (a)-[r:Tiene]->(b) return type (r)
+match (a),(b) where id(a)=156 and id(b)=50 create (a)-[r:Tiene]->(b) return type (r)
+match (a),(b) where id(a)=156 and id(b)=65 create (a)-[r:Tiene]->(b) return type (r)
+match (a),(b) where id(a)=156 and id(b)=64 create (a)-[r:Tiene]->(b) return type (r)
+match (a),(b) where id(a)=156 and id(b)=74 create (a)-[r:Tiene]->(b) return type (r)
+match (a),(b) where id(a)=156 and id(b)=59 create (a)-[r:Tiene]->(b) return type (r)
+match (a),(b) where id(a)=156 and id(b)=55 create (a)-[r:Tiene]->(b) return type (r)
+match (a),(b) where id(a)=156 and id(b)=52 create (a)-[r:Tiene]->(b) return type (r)
+match (a),(b) where id(a)=156 and id(b)=53 create (a)-[r:Tiene]->(b) return type (r)
+match (a),(b) where id(a)=156 and id(b)=65 create (a)-[r:Tiene]->(b) return type (r)
+match (a),(b) where id(a)=156 and id(b)=61 create (a)-[r:Tiene]->(b) return type (r)
+match (a),(b) where id(a)=156 and id(b)=107 create (a)-[r:Tiene]->(b) return type (r)
+match (a),(b) where id(a)=156 and id(b)=49 create (a)-[r:Tiene]->(b) return type (r)
+match (a),(b) where id(a)=156 and id(b)=58 create (a)-[r:Tiene]->(b) return type (r)

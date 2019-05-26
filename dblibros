@@ -1,0 +1,59 @@
+﻿N
+{nombre:Ciencia Ficcion}
+{nombre:Novela Negra}
+"{Titulo:El Asesinato de Roger Ackroyd,autor:Agatha Christie,genero:Novela Negra}"
+"{Titulo:Animales heridos,autor:Luis Alemañ,genero:Poesía}"
+"{Titulo:Éire,autor:Salva Alemany,genero:Novela Negra}"
+"{Titulo:Al tantear la costa,autor:Juan José Fernández Morales,genero:Novela Negra}"
+"{Titulo:Vuelos rasantes,autor:Luis Amézaga,genero:Narrativa}"
+"{Titulo:Objetive: AHIAH Summit - Objetivo: Cumbre AHIAH (Edición Bilingüe),autor:Julio Fraile,genero:Economía}"
+"{Titulo:En el reino de la araña,autor:M. Delbal,genero:Novela Negra}"
+"{Titulo:Bestiarum Curriculum. Meditaciones sobre el acontecimiento (en la academia),autor:Belén Blesa Aledo,genero:Ensayo Crítico sobre el método científico}"
+"{Titulo:La Leyenda de Sleepy Hollow,autor:Washington Irving,genero:Terror}"
+"{Titulo:Un Cadaver en la Biblioteca,autor:,genero:Novela Negra}"
+"{Titulo:Fuan no Tane Plus,autor:Masaaki Nakayama,genero:Terror}"
+"{Titulo:Churras y Merinas (Visiones, impresiones, realidades),autor:Roman Alvarez,genero:Articulos Periodisticos}"
+"{Titulo:Blanco,autor:Carlota Josefina Berard,genero:Prosa poética}"
+"{Titulo:La Mente Dibujada,autor:Grace Klimt y Salvawitts,genero:Poesía y prosa poética}"
+"{Titulo:La Sociedad Inmortal (Hacia la Metamorfosis Humana),autor:Francisco Alamar,genero:Ensayo Humanístico}"
+"{Titulo:Dormir á la belle étoile,autor:Aitana Monzón,genero:Poesía Actual}"
+"{Titulo:Burla burlando.Las diversiones de los universitarios en el siglo XVI,autor:Alberto del Campo Tejedor,genero:Ensayo historíco}"
+"{Titulo:Cuando el oro aprieta,autor:Björn Blanca van Goch,genero:Narrativa}"
+"{Titulo:Memorias de un homicida,autor:José María Vaz de Soto,genero:Novela}"
+"{Titulo:Bajo otra luz, la última,autor:Vicente Rodríguez Manchado,genero:Poesía actual}"
+"{Titulo:El señor de los anillos,autor:J. R. R. Tolkien,genero:Ciencia Ficcion}"
+"{Titulo:La guerra de los mundos ,autor:H. G. Wells,genero:Ciencia Ficcion}"
+"{Titulo:Orgullo y Prejuicio,autor:Jane Austen,genero:Romance}"
+"{Titulo:Seis personajes en busca de autor,autor:Lougi Pirandellor,genero:Filosofia}"
+"{Titulo:El sabuesodelos Baskerville,autor:Arthur Conan Doyle,genero:Novela Negra}"
+"{Titulo:La vida instrucciones de uso,autor:Georger Perec,genero:Ciencia Ficcion}"
+"{Titulo:El silencio del mar,autor:Jean Bruller,genero:Dramatico}"
+"{Titulo:La montaña magica,autor:Thomas Mann,genero:Ciencia Ficcion}"
+"{Titulo:Cien años de soledad,autor:Gabriel García Marquez,genero:Novela}"
+"{Titulo:La metamorfosis,autor:Kafka,genero:Ciencia Ficcion}"
+"{Titulo:Ulises,autor:James Joyce,genero:Ciencia Ficción}"
+"{Titulo:Lo que el viento se llevo,autor:Margaret Mitchell,genero:Novela}"
+{nombre:Generos}
+{name:251-500}
+{name:500+}
+{precio:Gratis pdf}
+"{Titulo:Diario de Anne Frank,autor:Anne Frank,genero:Novlea}"
+"{Titulo:Viaje al fin de la noche,autor:Louis Fernandin Céline,genero:Ciencia Ficcion}"
+"{Titulo:En busca del tiempo perdido,autor:Marcel Proust,genero:Novela}"
+"{Titulo:La casa de vapor,autor:Julio Verne,genero:Novela}"
+"{Titulo:La esfinge de los hielos,autor:Julio Verne,genero:Ciencia Ficcion}"
+"{Titulo:La isla misteriosa,autor:Julio Verne,genero:Ciencia Ficcion}"
+"{Titulo:La vuelta al mundo en 80 días,autor:Julio Verne,genero:Ciencia Ficcion}"
+"{Titulo:Viaje al centro de la tierra,autor:Julio Verne,genero:Ciencia Ficcion}"
+{nombre:Poesia}
+{precio:Q 0-150}
+{precio:Q 150-300}
+{nombre:Narrativa}
+{nombre:Prosa}
+{nombre:Terror}
+{nombre:Dramatico}
+{nombre:Novela}
+{nombre:Periodistico}
+{nombre:Aventura}
+{nombre:Romance}
+{name:0-250}
