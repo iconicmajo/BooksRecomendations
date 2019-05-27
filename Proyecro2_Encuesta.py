@@ -11,7 +11,7 @@ from neo4jrestclient.client import GraphDatabase
 from neo4jrestclient import client
 
 #Conexión a la base de datos, usando el puerto, el usuario y la contraseña de la base de datos
-db = GraphDatabase("http://localhost:7474", username="neo4j", password="1234")
+db = GraphDatabase("http://localhost:11002", username="neo4j", password="1234")
 
 #Aqui se ingresan los nodos y las etiquetas del grafo
 ##Categorias de la base de datos
@@ -283,12 +283,12 @@ print("Si conecto a la base de datos")
 
 
 #**************POESIA***************
-def  hacerrecomendacion(respaginas, costo2):
+def  hacerrecomendacion(gen,respaginas, costo2):
     #************************Filtración por Genero, Costo y paginas
     x = True 
     while x:  #Para que el usuario pueda elegir un ambiente y si se equivoca vuelve a preguntar
-        print("\nLos libros que recomendamos de Poesia: \n")
-        #q='MATCH (:Generos { name: "Poesia" })<--(u:Titulos) MATCH (:Costos {name:"'+costo2+'"})--(u:Titulos) MATCH (:Paginas{name:"'+respaginas+'"})--(u:Titulos) RETURN u'
+        #print("\nLlama funci: \n")
+        q='MATCH (:Generos { name: "'+gen+'" })<--(u:Titulos) MATCH (:Costos {name:"'+costo2+'"})--(u:Titulos) MATCH (:Paginas{name:"'+respaginas+'"})--(u:Titulos) RETURN u'
         #q='MATCH (:Generos { name: "Poesia" })<--(u:Titulos) MATCH (:Costos {name:"Gratis PDF"})--(u:Titulos) MATCH (:Paginas{name:"De 0 a 250 paginas"})--(u:Titulos) RETURN u'
         #q = 'MATCH (u: Titulos{genero:"Poesia"}) RETURN u'
         #q = 'MATCH (:Generos { name: "Poesia" })<--(u:Titulos) MATCH (:Costos {name:"Gratis PDF"})--(u:Titulos) RETURN u'
@@ -296,7 +296,8 @@ def  hacerrecomendacion(respaginas, costo2):
         #Se agregan todos los ambientes
         for i in results:
             print("-"+"%s"%(i[0]["titulo"]))
-    x = True
+            print()
+        x = False
     
 #***************Ciencia Ficcion
 def  cienciaf(respaginas, costo2):

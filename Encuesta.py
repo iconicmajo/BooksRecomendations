@@ -14,36 +14,10 @@ from Proyecro2_Encuesta import *
 #Nota: Se necesita instalar neo4jrestclient para que se conecte a la base de datos
 
 #Conexión a la base de datos, usando el puerto, el usuario y la contraseña de la base de datos
-db = GraphDatabase("http://localhost:7474", username="neo4j", password="1234")
+db = GraphDatabase("http://localhost:11002", username="neo4j", password="1234")
 
 generos = ["Novela Negra", "Dramatico", "Terror", "Prosa", "Ensayo", "Narrativa", "Novela",
            "Ciencia Ficcion", "Periodistico", "Sagas", "Aventura", "Poesia"]
-def hacerrecomendacin(respaginas, costo):
-    print("hola si entro")
-    libros = {}
-    for i in generos:
-        mquery = 'MATCH (g:Generos)-[r:a]->(t:Titulos) WHERE g.name="'+i+'"RETURN g, type(r), t'
-        res1 = db.query(mquery, returns=(client.Node, str, client.Node))
-        print("-"+"%s"%(i[0]["name"]))
-        #libros[i[0][i]]=0
-        print("hola si entrox2")
-        for j in res1:
-            mquery = 'MATCH (g:No_Pags)-[r:a]->(t:Titulos) WHERE t.name="'+j[2]["name"]+'"RETURN g, type(r), t'
-            res2 = db.query(mquery, returns=(client.Node, str, client.Node))
-            print("hola si entrox3")
-            for k in res2:
-                mquery2 = 'MATCH (g:Costo)-[r:a]->(t:Titulos) WHERE g.name="'+j[2]["name"]+'"RETURN g, type(r), t'
-                res3 = db.query(mquery2, returns=(client.Node, str, client.Node))
-                print("hola si entrox4")
-                for l in  res3:
-                    if k[0]["name"] == respaginas and l[0]["name"] == costo:
-                        libros[l[2]["name"]]= libros[l[2]["name"]]+5
-    for key, value in libros:
-        print("- %s" %key)
-        print("hola si entrox5")
-
-
-
 
 #Funcion para las preguntas
 def Preguntar(pregunta, respuestas):
@@ -128,11 +102,11 @@ def main():
             #Otro de los filtros a tomar en cuenta para recomentar
             #numero de paginas y costo del mismo 
             while bandera:
-                muchaspaginas = input("Que tantas paginas le importa que su libro tenga?\n1. 0 - 250 pags\n2. 251 -en adelante pags").lower().strip()
-                if muchaspaginas == "1" or muchaspaginas == "2" or muchaspaginas == "3":
+                muchaspaginas = input("Que tantas paginas le importa que su libro tenga?\n1. 0 - 250 pags\n2. 251 -en adelante pags\n").lower().strip()
+                if muchaspaginas == "1" or muchaspaginas == "2":
                     bandera = False
                     #opciones de respuestas
-                    resppaginas = "De 0 a 250 paginas" if (muchaspaginas == "1") else "De 251 en adelante" if (muchaspaginas == "2") else "500+"
+                    respaginas = "De 0 a 250 paginas" if (muchaspaginas == "1") else "De 251 paginas en adelante" 
                 else:
                     print(mal)
             bandera = True
@@ -144,14 +118,22 @@ def main():
                     if costo < 1 or costo > 3:
                         raise Exception()
                     bandera = False
-                    costo2 = "Gratis pdf" if costo == 1 else "0-150" if costo == 2 else "150-300"
+                    costo2 = "Gratis PDF" if costo == 1 else "0-150" if costo == 2 else "150-300"
                 except:
                     print(mal)
             #Hace una llamada a la función en Proyecto2_Encuesta
             #En este determina la recomendacion
-            #hacerrecomendacion(respaginas, costo2)
-            hacerrecomendacion(respaginas, costo2)
+            print("Los libros que recomendamos son: ")
+            for e in generos:
+                hacerrecomendacion(e,respaginas, costo2)
             #buscar()
+            print("**********************************")
+            print("     Bienvenido a de Bookstore")
+            print("**********************************")
+            print("1. Nuevo usuario")
+            print("2. Ver Recomendaciones")
+            print("3. Eliminar")
+            print("4. Salir")
         if op==3:
             #Elimina un usuario ingresado 
             print("************************************")
