@@ -50,9 +50,8 @@ def main():
     print("**********************************")
     print("1. Nuevo usuario")
     print("2. Ver Recomendaciones")
-    print("3. Eliminar")
-    print("4. Salir")
-    while op != 4:
+    print("3. Salir")
+    while op != 3:
         op = input(" ")
         while not op.isdigit():
             op = input("Ingese una opción valida: ")
@@ -77,8 +76,7 @@ def main():
             print("**********************************")
             print("1. Nuevo usuario")
             print("2. Ver Recomendaciones")
-            print("3. Eliminar")
-            print("4. Salir")
+            print("3. Salir")
             
         if op ==2:
             #Recomendación por intereses
@@ -126,32 +124,12 @@ def main():
             print("Los libros que recomendamos son: ")
             for e in generos:
                 hacerrecomendacion(e,respaginas, costo2)
-            #buscar()
             print("**********************************")
             print("     Bienvenido a de Bookstore")
             print("**********************************")
             print("1. Nuevo usuario")
             print("2. Ver Recomendaciones")
-            print("3. Eliminar")
-            print("4. Salir")
-        if op==3:
-            #Elimina un usuario ingresado 
-            print("************************************")
-            print("         Eliminar Usuarios" )
-            print("************************************")
-            nombre = input("ingrese su nombre: ")
-            #Aqui se conecta con la db para poder eliminar
-            #Encontrar el nombre de usuario
-            #user = db.nodes.create(name=nombre,age=edad,gen=genero,ed= eduacion)
-            #Eliminar
-            #Usuarios.add(user)
-            print("**********************************")
-            print("     Bienvenido a de Bookstore")
-            print("**********************************")
-            print("1. Nuevo usuario")
-            print("2. Ver Recomendaciones")
-            print("3. Eliminar")
-            print("4. Salir")
+            print("3. Salir")
             
     else:
         print("Gracias por su prefencia. Disfrute su lectura")
