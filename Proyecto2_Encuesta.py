@@ -13,7 +13,7 @@ db = GraphDatabase("http://localhost:7474", username="neo4j", password="1234")
 
 #Aqui se ingresan los nodos y las etiquetas del grafo
 ##Categorias de la base de datos
-genero=""s = db.labels.create("genero=""s")
+Generos = db.labels.create("Generos")
 Usuarios = db.labels.create("Usuarios")
 Encuesta_Pregunta = db.labels.create("Preguntas")
 genders_Result = db.labels.create("Resultados")
@@ -67,7 +67,7 @@ aventura = db.nodes.create(name="Aventura")
 poesia = db.nodes.create(name="Poesia")
 
 #Los genero=""s se agregan a la base de datos
-genero=""s.add(novela_Negra, dramatico, terror, prosa, ensayo, narrativa, novela, ciencia_Ficcion, periodistico, sagas, aventura, poesia, romance, filosofia)
+Generos.add(novela_Negra, dramatico, terror, prosa, ensayo, narrativa, novela, ciencia_Ficcion, periodistico, sagas, aventura, poesia, romance, filosofia)
 
 #Costos y numero de paginas
 #Manualmente se crean los nodos de los tipos de costos y numero de paginas
